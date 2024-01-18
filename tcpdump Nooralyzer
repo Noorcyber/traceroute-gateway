@@ -3,8 +3,6 @@
 # Function to display the design
 display_design() {
     cat << "EOF"
-
-
  _                    _                                __                           _                        
 | |_  ___  _ __    __| | _   _  _ __ ___   _ __     /\ \ \ ___    ___   _ __  __ _ | | _   _  ____ ___  _ __ 
 | __|/ __|| '_ \  / _` || | | || '_ ` _ \ | '_ \   /  \/ // _ \  / _ \ | '__|/ _` || || | | ||_  // _ \| '__|
@@ -29,8 +27,8 @@ update_and_install_tcpdump() {
 
 # Function to capture ARP packets with tcpdump for 30 seconds
 capture_arp_packets() {
-    echo "Capturing ARP packets..."
-    tcpdump -i eth0 | grp ARP
+    echo "Capturing ARP packets for 30 seconds..."
+    timeout 30 tcpdump -i eth0 | grep ARP
     echo "Capture completed."
 }
 
