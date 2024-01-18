@@ -14,7 +14,7 @@ display_design() {
 
 
     By Noor Shaheed, Datto, Kaseya. 01/15/2024
-AP RSSI and Transmit Power Checker
+auto tcpdump 
 ----------------------------
 EOF
 }
