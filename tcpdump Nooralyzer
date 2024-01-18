@@ -29,8 +29,8 @@ update_and_install_tcpdump() {
 
 # Function to capture ARP packets with tcpdump for 30 seconds
 capture_arp_packets() {
-    echo "Capturing ARP packets for 30 seconds..."
-    tcpdump -i eth0 -c 100 -w arp_packets.pcap arp
+    echo "Capturing ARP packets..."
+    tcpdump -i eth0 | grp ARP
     echo "Capture completed."
 }
 
