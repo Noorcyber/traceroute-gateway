@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Function to traceroute to the gateway
+traceroute_to_gateway() {
+    echo "Tracerouting to the gateway..."
+    gateway_ip=$(ip route | awk '/default/ { print $3 }')
+    
+    if [ -n "$gateway_ip" ]; then
+        traceroute $gateway_ip
+    else
+        echo "Unable to determine the gateway IP."
+    fi
+}
+
+# Main function
+main() {
+    traceroute_to_gateway
+}
+
+# Call the main function
+main
