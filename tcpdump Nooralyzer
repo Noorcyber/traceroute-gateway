@@ -27,8 +27,8 @@ update_and_install_tcpdump() {
 
 # Function to capture ARP packets with tcpdump for 30 seconds
 capture_arp_packets() {
-    echo "Capturing ARP packets for 30 seconds..."
-    timeout 30 tcpdump -i eth0 | grep ARP
+    echo "Capturing ARP packets for 45 seconds..."
+    timeout 45 tcpdump -i eth0 | grep ARP
     echo "Capture completed."
 }
 
